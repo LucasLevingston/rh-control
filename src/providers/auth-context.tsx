@@ -25,6 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const auth = getAuth(app)
+    console.log(user)
     const unsubscribe = onAuthStateChanged(auth, firebaseUser => {
       setUser(firebaseUser)
       setLoading(false)

@@ -1,3 +1,4 @@
+import { ArrowBigUpDash } from 'lucide-react'
 import React from 'react'
 import {
   AlertDialog,
@@ -44,7 +45,10 @@ export const PromoteButton: React.FC<PromoteButtonProps> = ({ employee }) => {
     <div>
       <AlertDialog>
         <AlertDialogTrigger>
-          <Button className="bg-green-500">Promote Employee</Button>
+          <Button className="bg-green-500 hover:opacity-60 hover:bg-green-500">
+            <ArrowBigUpDash />
+            Promote
+          </Button>
         </AlertDialogTrigger>
         <AlertDialogContent>
           <AlertDialogHeader>

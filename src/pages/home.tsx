@@ -30,35 +30,33 @@ export default function Home() {
         <div className="mb-8">
           <Building2 className="h-16 w-16 mx-auto text-primary mb-4" />
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Sistema de Gestão RHControl
+            RHControl Management System
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Gerencie funcionários e recursos de forma eficiente
+            Manage employees and resources efficiently
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="text-center">
             <Users className="h-12 w-12 mx-auto text-blue-600 mb-4" />
-            <h3 className="text-lg font-semibold mb-2">
-              Gestão de Funcionários
-            </h3>
+            <h3 className="text-lg font-semibold mb-2">Employee Management</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Controle completo sobre cadastro e perfis de funcionários
+              Complete control over employee registration and profiles
             </p>
           </div>
           <div className="text-center">
             <Settings className="h-12 w-12 mx-auto text-green-600 mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Configurações</h3>
+            <h3 className="text-lg font-semibold mb-2">Settings</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Personalize o sistema de acordo com suas necessidades
+              Customize the system according to your needs
             </p>
           </div>
           <div className="text-center">
             <Shield className="h-12 w-12 mx-auto text-purple-600 mb-4" />
-            <h3 className="text-lg font-semibold mb-2">Segurança Total</h3>
+            <h3 className="text-lg font-semibold mb-2">Full Security</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Autenticação robusta e controle de acesso
+              Robust authentication and access control
             </p>
           </div>
         </div>
@@ -66,12 +64,12 @@ export default function Home() {
         <div className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center">
           <Link to="/login">
             <Button className="w-full sm:w-auto" size="lg">
-              Fazer Login
+              Log In
             </Button>
           </Link>
           <Link to="/register">
             <Button className="w-full sm:w-auto" size="lg" variant="outline">
-              Criar Conta
+              Create Account
             </Button>
           </Link>
         </div>
@@ -82,49 +80,49 @@ export default function Home() {
   return (
     <div className="space-y-4">
       <div>
-        <h2 className="text-xl font-semibold  mb-4">Ações Disponíveis</h2>
+        <h2 className="text-xl font-semibold  mb-4">Available Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <QuickAction
             available={true}
-            description="Visualizar, adicionar e editar funcionários"
+            description="View, add, and edit employees"
             href="/employee/list"
             icon={<Users className="h-5 w-5" />}
-            title="Gerenciar Funcionários"
+            title="Manage Employees"
           />
           <QuickAction
             available={true}
-            description="Personalizar suas informações e preferências"
+            description="Customize your information and preferences"
             href="/settings/profile"
             icon={<Settings className="h-5 w-5" />}
-            title="Configurações do Perfil"
+            title="Profile Settings"
           />
           <QuickAction
             available={false}
-            description="Gerenciar eventos e compromissos"
+            description="Manage events and appointments"
             href="/agenda"
             icon={<Calendar className="h-5 w-5" />}
-            title="Agenda"
+            title="Schedule"
           />
           <QuickAction
             available={false}
-            description="Centro de comunicação interna"
-            href="/mensagens"
+            description="Internal communication center"
+            href="/messages"
             icon={<Mail className="h-5 w-5" />}
-            title="Mensagens"
+            title="Messages"
           />
           <QuickAction
             available={false}
-            description="Configurações de segurança e acesso"
-            href="/seguranca"
+            description="Security and access settings"
+            href="/security"
             icon={<Shield className="h-5 w-5" />}
-            title="Segurança"
+            title="Security"
           />
           <QuickAction
             available={false}
-            description="Visualizar métricas e análises"
-            href="/relatorios"
+            description="View metrics and analytics"
+            href="/reports"
             icon={<Activity className="h-5 w-5" />}
-            title="Relatórios"
+            title="Reports"
           />
         </div>
       </div>
@@ -134,9 +132,9 @@ export default function Home() {
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <Users className="h-5 w-5" />
-              <span>Informações do Usuário</span>
+              <span>User Information</span>
             </CardTitle>
-            <CardDescription>Seus dados de perfil no sistema</CardDescription>
+            <CardDescription>Your profile data in the system</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
@@ -153,27 +151,27 @@ export default function Home() {
               <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800">
                 <div className="flex items-center space-x-3">
                   <Users className="h-5 w-5 text-green-600" />
-                  <span className="text-sm font-medium">Nome</span>
+                  <span className="text-sm font-medium">Name</span>
                 </div>
                 <span className="text-sm text-muted-foreground">
-                  {user.displayName || 'Não informado'}
+                  {user.displayName || 'Not provided'}
                 </span>
               </div>
 
               <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800">
                 <div className="flex items-center space-x-3">
                   <Shield className="h-5 w-5 text-purple-600" />
-                  <span className="text-sm font-medium">Email Verificado</span>
+                  <span className="text-sm font-medium">Email Verified</span>
                 </div>
                 <Badge variant={user.emailVerified ? 'default' : 'secondary'}>
-                  {user.emailVerified ? 'Sim' : 'Não'}
+                  {user.emailVerified ? 'Yes' : 'No'}
                 </Badge>
               </div>
 
               <div className="flex items-center justify-between p-3 rounded-lg bg-gray-50 dark:bg-gray-800">
                 <div className="flex items-center space-x-3">
                   <Clock className="h-5 w-5 text-orange-600" />
-                  <span className="text-sm font-medium">Membro desde</span>
+                  <span className="text-sm font-medium">Member Since</span>
                 </div>
               </div>
             </div>
@@ -182,7 +180,7 @@ export default function Home() {
               <Link to="/settings/profile">
                 <Button className="w-full">
                   <Settings className="mr-2 h-4 w-4" />
-                  Editar Perfil
+                  Edit Profile
                 </Button>
               </Link>
             </div>
@@ -193,10 +191,10 @@ export default function Home() {
           <CardHeader>
             <CardTitle className="flex items-center space-x-2">
               <Activity className="h-5 w-5" />
-              <span>Próximos Passos</span>
+              <span>Next Steps</span>
             </CardTitle>
             <CardDescription>
-              Sugestões para começar a usar o sistema
+              Suggestions to start using the system
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -207,10 +205,10 @@ export default function Home() {
                     <Mail className="h-5 w-5 text-yellow-600 mt-0.5" />
                     <div>
                       <h4 className="text-sm font-medium text-yellow-800 dark:text-yellow-200">
-                        Verificar Email
+                        Verify Email
                       </h4>
                       <p className="text-xs text-yellow-700 dark:text-yellow-300 mt-1">
-                        Verifique seu email para ter acesso completo ao sistema
+                        Verify your email to gain full access to the system
                       </p>
                     </div>
                   </div>
@@ -223,14 +221,14 @@ export default function Home() {
                     <Users className="h-5 w-5 text-blue-600 mt-0.5" />
                     <div>
                       <h4 className="text-sm font-medium text-blue-800 dark:text-blue-200">
-                        Completar Perfil
+                        Complete Your Profile
                       </h4>
                       <p className="text-xs text-blue-700 dark:text-blue-300 mt-1">
-                        Adicione seu nome para personalizar a experiência
+                        Add your name to personalize your experience
                       </p>
                       <Link to="/settings/profile">
                         <Button className="mt-2" size="sm">
-                          Completar Agora
+                          Complete Now
                         </Button>
                       </Link>
                     </div>
@@ -243,14 +241,14 @@ export default function Home() {
                   <Users className="h-5 w-5 text-green-600 mt-0.5" />
                   <div>
                     <h4 className="text-sm font-medium text-green-800 dark:text-green-200">
-                      Explorar Funcionários
+                      Explore Employees
                     </h4>
                     <p className="text-xs text-green-700 dark:text-green-300 mt-1">
-                      Comece gerenciando a lista de funcionários
+                      Start by managing the employee list
                     </p>
                     <Link to="/employee/list">
                       <Button className="mt-2" size="sm" variant="outline">
-                        Ver Funcionários
+                        View Employees
                       </Button>
                     </Link>
                   </div>

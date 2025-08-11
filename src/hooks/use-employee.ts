@@ -155,15 +155,14 @@ export const useEmployees = () => {
       const updateData: Partial<EmployeeType> = {
         ...updates,
       }
+
+      let profilePictureUrl = updates.profilePictureUrl
+
       if (profilePicture) {
         const storagePath = `profilePictures/${id}_${Date.now()}_${profilePicture.name}`
         const imageRef = storageRef(storage, storagePath)
         const uploadResult = await uploadBytes(imageRef, profilePicture)
-        updateData.profilePictureUrl = await getDownloadURL(uploadResult.ref)
-      }
-
-      if ('profilePicture' in updateData) {
-        delete updateData.profilePicture
+        profilePictureUrl = await getDownloadURL(uploadResult.ref)
       }
 
       const docRef = doc(employeeTableRef, id)
@@ -179,7 +178,7 @@ export const useEmployees = () => {
 
       updateEmployeeStore(id, {
         ...updates,
-        profilePictureUrl: updateData.profilePictureUrl,
+        profilePictureUrl,
         updatedAt: new Date(),
       })
       toast.success('Employee updated successfully!')

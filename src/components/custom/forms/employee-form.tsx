@@ -28,7 +28,9 @@ interface EmployeeFormProps {
   employee?: EmployeeType
 }
 export function EmployeeForm({ employee }: EmployeeFormProps) {
-  const [preview, setPreview] = useState(employee?.profilePictureUrl || '')
+  const [, setPreview] = useState<string | null>(
+    employee?.profilePictureUrl || null
+  )
   const [noStreetNumber, setNoStreetNumber] = useState(
     employee?.number === 'No number'
   )
@@ -57,6 +59,7 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
       profilePicture: null,
     },
   })
+
   useFormProgressTracker(form)
 
   useEffect(() => {
@@ -78,7 +81,8 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
         admissionDate: employee.admissionDate,
         profilePicture: null,
       })
-      setPreview(employee.profilePictureUrl || '')
+      setPreview(employee.profilePictureUrl || null)
+
       setNoStreetNumber(employee.number === 'No number')
     } else {
       form.reset({
@@ -98,7 +102,7 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
         admissionDate: new Date(),
         profilePicture: null,
       })
-      setPreview('')
+      setPreview(null)
       setNoStreetNumber(false)
     }
   }, [employee, form])
@@ -107,7 +111,6 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
     try {
       if (employee?.uid) {
         await updateEmployee(employee.uid, data, data.profilePicture)
-        toast.success('Employee updated successfully!')
       } else {
         await createEmployee({ data, profilePicture: data.profilePicture })
         toast.success('Employee created successfully!')
@@ -140,9 +143,7 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
           </TabsList>
 
           <TabsContent className="space-y-6" value="personal">
-            {/* Estrutura de grid responsiva */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Coluna para campos de texto */}
               <div className="space-y-4">
                 <CustomFormField
                   fieldType={FormFieldType.INPUT}
@@ -182,7 +183,6 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
                   placeholder="Select gender"
                 />
               </div>
-              {/* Coluna para upload de foto de perfil e opção de arredondamento */}
               <div className="space-y-4">
                 <div className="flex flex-col items-center space-y-4">
                   <div className="w-full space-y-2">
@@ -191,15 +191,11 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
                       form={form}
                       isAvatar={true}
                       isEditing={isEditing}
-                      label=""
                       name="profilePicture"
                       placeholder="Upload profile picture"
-                      // isRoundPhoto e setPreview não são mais passados aqui
-                      preview={preview} // Continua passando preview para inicialização
-                      setPreview={setPreview} // Continua passando setPreview para atualizar o pai
+                      preview={employee?.profilePictureUrl}
                     />
                   </div>
-                  {/* O Switch e Label para Round photo foram movidos para dentro do CustomFormField */}
                 </div>
               </div>
             </div>
@@ -317,7 +313,6 @@ export function EmployeeForm({ employee }: EmployeeFormProps) {
             <EditButton
               form={form}
               isEditing={isEditing}
-              isSubmitting={form.formState.isSubmitting}
               onSubmit={onSubmit}
               setIsEditing={setIsEditing}
             />

@@ -5,7 +5,7 @@ export function getLabelForEnum<T extends string>(value: T): string {
 }
 
 const enumLabels = {
-  [genderOptions.MALE]: 'Masculino',
-  [genderOptions.FEMALE]: 'Feminino',
+  [genderOptions.MALE]: 'Male',
+  [genderOptions.FEMALE]: 'Famele',
   [genderOptions.PREFER_NOT_TO_SAY]: 'Prefiro não dizer',
 }

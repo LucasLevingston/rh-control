@@ -24,7 +24,6 @@ export function EmployeesList(): JSX.Element {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          {/* <Progress className="w-[60%]" value={progress} /> */}
           {employees && (
             <EmployeeTable
               columns={Columns}

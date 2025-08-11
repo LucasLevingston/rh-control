@@ -107,7 +107,7 @@ export function EmployeeTable<TData, TValue>({
           <Input
             className="max-w-sm"
             onChange={event => setGlobalFilter(event.target.value)}
-            placeholder="Buscar em todas as colunas..."
+            placeholder="Search all columns..."
             value={globalFilter ?? ''}
           />
 
@@ -122,10 +122,10 @@ export function EmployeeTable<TData, TValue>({
             }
           >
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filtrar por Departamento" />
+              <SelectValue placeholder="Filter by Department" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Todos os Departamentos</SelectItem>{' '}
+              <SelectItem value="all">All Departments</SelectItem>
               {uniqueDepartments.map(department => (
                 <SelectItem key={department} value={department}>
                   {department}
@@ -133,6 +133,7 @@ export function EmployeeTable<TData, TValue>({
               ))}
             </SelectContent>
           </Select>
+
           <Select
             onValueChange={value =>
               table
@@ -144,10 +145,10 @@ export function EmployeeTable<TData, TValue>({
             }
           >
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filtrar por Cargo" />
+              <SelectValue placeholder="Filter by Position" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Todos os Cargos</SelectItem>{' '}
+              <SelectItem value="all">All Positions</SelectItem>
               {uniquePositions.map(position => (
                 <SelectItem key={position} value={position}>
                   {position}
@@ -155,6 +156,7 @@ export function EmployeeTable<TData, TValue>({
               ))}
             </SelectContent>
           </Select>
+
           <Select
             onValueChange={value =>
               table
@@ -166,27 +168,27 @@ export function EmployeeTable<TData, TValue>({
             }
           >
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filtrar por Status" />
+              <SelectValue placeholder="Filter by Status" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Todos os Status</SelectItem>{' '}
-              <SelectItem value="true">Ativo</SelectItem>
-              <SelectItem value="false">Inativo</SelectItem>
+              <SelectItem value="all">All Statuses</SelectItem>
+              <SelectItem value="true">Active</SelectItem>
+              <SelectItem value="false">Inactive</SelectItem>
             </SelectContent>
           </Select>
         </div>
+
         <div className="flex gap-2">
           <Button asChild>
             <Link className="flex items-center" to="/employee/create">
-              {' '}
               <PlusCircle className="mr-2 h-4 w-4" />
-              Adicionar Funcionário
+              Add Employee
             </Link>
           </Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button className="ml-auto" variant="outline">
-                Colunas <ChevronDown className="ml-2 h-4 w-4" />
+                Columns <ChevronDown className="ml-2 h-4 w-4" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
@@ -210,10 +212,11 @@ export function EmployeeTable<TData, TValue>({
           </DropdownMenu>
         </div>
       </div>
+
       <div className="text-muted-foreground flex-1 text-sm mb-4">
-        {table.getFilteredSelectedRowModel().rows.length} funcionário(s)
-        selecionado(s).
+        {table.getFilteredSelectedRowModel().rows.length} employee(s) selected.
       </div>
+
       <div className="rounded-md border overflow-x-auto">
         <Table>
           <TableHeader>
@@ -255,13 +258,14 @@ export function EmployeeTable<TData, TValue>({
                   className="h-24 text-center"
                   colSpan={columns.length}
                 >
-                  Nenhum funcionário registrado.
+                  No employees registered.
                 </TableCell>
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
+
       <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           disabled={!table.getCanPreviousPage()}
@@ -269,7 +273,7 @@ export function EmployeeTable<TData, TValue>({
           size="sm"
           variant="outline"
         >
-          <ChevronLeft className="mr-2 h-4 w-4" /> Anterior
+          <ChevronLeft className="mr-2 h-4 w-4" /> Previous
         </Button>
         <Button
           disabled={!table.getCanNextPage()}
@@ -277,7 +281,7 @@ export function EmployeeTable<TData, TValue>({
           size="sm"
           variant="outline"
         >
-          Próximo <ChevronRight className="ml-2 h-4 w-4" />
+          Next <ChevronRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
     </div>

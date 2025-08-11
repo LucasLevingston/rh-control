@@ -106,7 +106,7 @@ export function PDFButton({ employee }: { employee: EmployeeType }) {
       onClick={handleGeneratePDF}
       variant="default"
     >
-      <div>Gerar PDF do Funcionário</div>
+      <div>Generate PDF</div>
       <FileText className="h-4 w-4" />
     </Button>
   )

@@ -1,3 +1,5 @@
+'use client'
+
 import { PencilIcon, SaveIcon, XIcon } from 'lucide-react'
 import type { UseFormReturn } from 'react-hook-form'
 import { Loading } from '@/components/Loading'
@@ -35,6 +37,7 @@ export function EditButton({
             disabled={isSubmitting}
             onClick={handleCancel}
             size="sm"
+            type="button"
             variant="outline"
           >
             <XIcon className="mr-2 h-4 w-4" /> Cancelar
@@ -43,6 +46,7 @@ export function EditButton({
             disabled={isSubmitting || !form.formState.isDirty}
             onClick={handleSave}
             size="sm"
+            type="button"
           >
             {isSubmitting ? (
               <>
@@ -56,7 +60,7 @@ export function EditButton({
           </Button>
         </>
       ) : (
-        <Button onClick={() => setIsEditing(true)} size="sm">
+        <Button onClick={() => setIsEditing(true)} size="sm" type="button">
           <PencilIcon className="mr-2 h-4 w-4" /> Editar
         </Button>
       )}

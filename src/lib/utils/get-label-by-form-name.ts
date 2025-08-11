@@ -1,107 +1,107 @@
 export function getLabelByFormName(name: string): string {
   switch (name) {
     case 'name':
-      return 'Nome Completo'
+      return 'Full Name'
     case 'displayName':
-      return 'Nome Completo'
+      return 'Full Name'
     case 'email':
       return 'Email'
     case 'password':
-      return 'Senha'
+      return 'Password'
     case 'confirmPassword':
-      return 'Confirmar senha'
+      return 'Confirm Password'
     case 'cpf':
       return 'CPF'
     case 'imageUrl':
-      return 'URL da Imagem'
+      return 'Image URL'
     case 'birthDate':
-      return 'Data de Nascimento'
+      return 'Date of Birth'
     case 'phone':
-      return 'Telefone'
+      return 'Phone'
     case 'gender':
-      return 'Sexo'
+      return 'Gender'
     case 'zipCode':
-      return 'CEP'
+      return 'ZIP Code'
     case 'street':
-      return 'Rua'
+      return 'Street'
     case 'number':
-      return 'Número'
+      return 'Number'
     case 'city':
-      return 'Cidade'
+      return 'City'
     case 'state':
-      return 'Estado'
+      return 'State'
     case 'profilePictureFile':
-      return 'Foto de Perfil'
+      return 'Profile Picture'
     case 'action':
-      return 'Ação'
+      return 'Action'
     case 'objective':
-      return 'Objetivo'
+      return 'Objective'
     case 'product':
-      return 'Produto'
+      return 'Product'
     case 'unity':
-      return 'Unidade'
+      return 'Unit'
     case 'predictedValue':
-      return 'Valor Previsto'
+      return 'Predicted Value'
     case 'status':
       return 'Status'
     case 'predictedStartsDate':
-      return 'Início Previsto'
+      return 'Predicted Start Date'
     case 'predictedEndDate':
-      return 'Término Previsto'
+      return 'Predicted End Date'
     case 'registrationNumber':
-      return 'Número de Matrícula'
+      return 'Registration Number'
     case 'pisNumber':
-      return 'Número PIS'
+      return 'PIS Number'
     case 'hireDate':
-      return 'Data de Contratação'
+      return 'Hire Date'
     case 'terminationDate':
-      return 'Data de Demissão'
+      return 'Termination Date'
     case 'jobPositionId':
-      return 'Cargo'
+      return 'Job Position'
     case 'departmentId':
-      return 'Departamento'
+      return 'Department'
     case 'salary':
-      return 'Salário'
+      return 'Salary'
     case 'emergencyContactName':
-      return 'Contato de Emergência'
+      return 'Emergency Contact Name'
     case 'emergencyContactPhone':
-      return 'Telefone de Emergência'
+      return 'Emergency Contact Phone'
     case 'title':
-      return 'Título'
+      return 'Title'
     case 'description':
-      return 'Descrição'
+      return 'Description'
     case 'contactEmail':
-      return 'Email de Contato'
+      return 'Contact Email'
     case 'contactPhone':
-      return 'Telefone de Contato'
+      return 'Contact Phone'
     case 'location':
-      return 'Localização'
+      return 'Location'
     case 'budget':
-      return 'Orçamento'
+      return 'Budget'
     case 'headOfDepartmentId':
-      return 'Chefe do Departamento'
+      return 'Head of Department'
     case 'contractNumber':
-      return 'Número do Contrato'
+      return 'Contract Number'
     case 'value':
-      return 'Valor'
+      return 'Value'
     case 'startDate':
-      return 'Data de Início'
+      return 'Start Date'
     case 'endDate':
-      return 'Data de Término'
+      return 'End Date'
     case 'partiesInvolved':
-      return 'Partes Envolvidas'
+      return 'Parties Involved'
     case 'type':
-      return 'Tipo'
+      return 'Type'
     case 'unit':
-      return 'Unidade de Medida'
+      return 'Unit of Measure'
     case 'targetValue':
-      return 'Valor Alvo'
+      return 'Target Value'
     case 'actualValue':
-      return 'Valor Atual'
+      return 'Actual Value'
     case 'measurementFrequency':
-      return 'Frequência de Medição'
+      return 'Measurement Frequency'
     case 'dataSource':
-      return 'Fonte de Dados'
+      return 'Data Source'
     default:
       return name
         .replace(/([A-Z])/g, ' $1')

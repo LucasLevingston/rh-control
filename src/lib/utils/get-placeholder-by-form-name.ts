@@ -1,84 +1,84 @@
 export const getPlaceholderByFormName = (name: string) => {
   switch (name) {
     case 'id':
-      return 'Identificador'
+      return 'Identifier'
     case 'name':
-      return 'Nome completo'
+      return 'Full name'
     case 'displayName':
-      return 'Nome completo'
+      return 'Full name'
     case 'email':
-      return 'Digite seu e-mail'
+      return 'Enter your email'
     case 'password':
-      return 'Digite sua senha'
+      return 'Enter your password'
     case 'confirmPassword':
-      return 'Confirme sua senha'
+      return 'Confirm your password'
     case 'cpf':
-      return 'Digite seu CPF'
+      return 'Enter your CPF'
     case 'googleAccessToken':
-      return 'Token de acesso Google'
+      return 'Google access token'
     case 'imageUrl':
-      return 'URL da imagem'
+      return 'Image URL'
     case 'gender':
-      return 'Selecione o gênero'
+      return 'Select gender'
     case 'role':
-      return 'Selecione o cargo'
+      return 'Select role'
     case 'isActive':
-      return 'Usuário ativo?'
+      return 'Is user active?'
     case 'lastLogin':
-      return 'Último login'
+      return 'Last login'
     case 'emailVerified':
-      return 'E-mail verificado?'
+      return 'Is email verified?'
     case 'birthDate':
-      return 'Data de nascimento'
+      return 'Date of birth'
     case 'phone':
-      return 'Telefone de contato'
+      return 'Contact phone'
     case 'zipCode':
-      return 'CEP'
+      return 'ZIP code'
     case 'city':
-      return 'Cidade'
+      return 'City'
     case 'state':
-      return 'Estado'
+      return 'State'
     case 'street':
-      return 'Rua'
+      return 'Street'
     case 'number':
-      return 'Número'
+      return 'Number'
     case 'createdAt':
-      return 'Data de criação'
+      return 'Creation date'
     case 'updatedAt':
-      return 'Última atualização'
+      return 'Last update'
     case 'action':
-      return 'Nome da ação'
+      return 'Action name'
     case 'objective':
-      return 'Objetivo da ação'
+      return 'Action objective'
     case 'status':
-      return 'Status atual'
+      return 'Current status'
     case 'product':
-      return 'Produto'
+      return 'Product'
     case 'unity':
-      return 'Unidade de medida'
+      return 'Unit of measure'
     case 'predictedValue':
-      return 'Valor previsto'
+      return 'Predicted value'
     case 'predictedStartsDate':
-      return 'Início previsto'
+      return 'Predicted start date'
     case 'predictedEndDate':
-      return 'Término previsto'
+      return 'Predicted end date'
     case 'programName':
-      return 'Nome do programa'
+      return 'Program name'
     case 'programType':
-      return 'Tipo do programa'
+      return 'Program type'
     case 'strategicAxis':
-      return 'Eixo estratégico'
+      return 'Strategic axis'
     case 'budget':
-      return 'Orçamento'
+      return 'Budget'
     case 'startDate':
-      return 'Data de início'
+      return 'Start date'
     case 'endDate':
-      return 'Data de término'
+      return 'End date'
     case 'targetAudience':
-      return 'Público-alvo'
+      return 'Target audience'
     case 'prefectureName':
-      return 'Nome da prefeitura'
+      return 'Prefecture name'
     default:
-      return 'Digite um valor'
+      return 'Enter a value'
   }
 }
